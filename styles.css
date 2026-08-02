@@ -694,6 +694,26 @@ textarea {
   color: var(--on-surface-muted);
 }
 
+.case-body {
+  max-width: 42ch;
+  line-height: 1.45;
+}
+
+.case-link {
+  display: inline-flex;
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+
+.case-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .case-stage {
   display: grid;
   gap: 12px;
@@ -819,12 +839,17 @@ textarea {
 
 .service-row {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: 18px;
-  align-items: center;
+  align-items: start;
   padding: 28px 4px;
   border-bottom: 1px solid var(--border);
   transition: background-color 220ms ease, padding-left 220ms ease;
+}
+
+a.service-row {
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
 }
 
 .service-row:hover {
@@ -882,7 +907,7 @@ textarea {
 
 .about-block {
   margin: 22px 0 0;
-  max-width: 34ch;
+  max-width: 46ch;
   font-size: clamp(20px, 2.4vw, 28px);
   line-height: 1.35;
   letter-spacing: -0.02em;

@@ -34,6 +34,10 @@
       el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
     });
 
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+      el.setAttribute("alt", t(el.getAttribute("data-i18n-alt")));
+    });
+
     updateMenuLabel();
     document.title = t("meta.title");
     root.classList.remove("i18n-pending");
