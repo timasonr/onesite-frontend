@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="the.onesite AGENCY — turnkey websites, automation, conversion.">
+  <title>the.onesite AGENCY — websites that convert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.2.5/index.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem("onesite-theme");
+        var lang = localStorage.getItem("onesite-lang");
+        if (theme === "dark" || theme === "light") document.documentElement.setAttribute("data-theme", theme);
+        if (lang === "ru" || lang === "en") {
+          document.documentElement.lang = lang;
+          if (lang === "ru") document.documentElement.classList.add("i18n-pending");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-glow" aria-hidden="true"></div>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo-link" href="#top" aria-label="the.onesite AGENCY">
+        <span class="mark" aria-hidden="true">
+          <span class="mark-the">the</span>
+          <span class="mark-one">one<span class="dot"></span></span>
+          <span class="mark-site">site</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+        <a class="btn btn-primary btn-mini" href="#lead" data-i18n="nav.cta">Leave a request</a>
+      </nav>
+
+      <div class="header-controls">
+        <div class="seg" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.en">EN</button>
+          <button type="button" data-lang="ru" aria-pressed="false" data-i18n="lang.ru">RU</button>
+        </div>
+        <div class="seg" role="group" aria-label="Theme">
+          <button type="button" data-theme-set="light" aria-pressed="true" data-i18n="theme.light">Light</button>
+          <button type="button" data-theme-set="dark" aria-pressed="false" data-i18n="theme.dark">Dark</button>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-i18n-aria="nav.menu">
+          <span data-menu-label data-i18n="nav.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+      <a class="btn btn-primary" href="#lead" data-i18n="nav.cta">Leave a request</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top">
+      <div class="hero-stage" data-hero-stage>
+        <div class="hero-collage" aria-hidden="true">
+          <figure class="float float-a"><img src="assets/portfolio/dice/photo_2026-08-02_09-32-36.jpg" alt=""></figure>
+          <figure class="float float-b"><img src="assets/portfolio/mimicly/photo_2026-08-02_09-32-34.jpg" alt=""></figure>
+          <figure class="float float-c"><img src="assets/portfolio/mm/photo_2026-08-02_09-32-38.jpg" alt=""></figure>
+          <figure class="float float-d"><img src="assets/portfolio/dice/photo_2026-08-02_09-32-37.jpg" alt=""></figure>
+        </div>
+        <div class="hero-veil"></div>
+      </div>
+
+      <div class="wrap hero-copy">
+        <div class="brand-lockup hero-in">
+          <span class="brand-the">the</span>
+          <span class="brand-one">one<span class="dot"></span></span>
+          <span class="brand-site">site</span>
+          <span class="brand-agency">AGENCY</span>
+        </div>
+        <h1 class="hero-title hero-in" data-i18n="hero.title">From brief to live site in 5–7 days</h1>
+        <p class="hero-support hero-in" data-i18n="hero.support">Turnkey websites · Automation · Conversion · More leads</p>
+        <div class="cta-row hero-in">
+          <a class="btn btn-primary" href="#lead" data-i18n="hero.cta">Leave a request</a>
+          <a class="btn btn-ghost" href="#work" data-i18n="hero.secondary">See the work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Proof">
+      <div class="marquee" data-marquee>
+        <div class="marquee-track">
+          <span class="proof-chip" data-i18n="proof.1">150+ projects</span>
+          <span class="proof-sep" aria-hidden="true"></span>
+          <span class="proof-chip" data-i18n="proof.2">5,000+ leads</span>
+          <span class="proof-sep" aria-hidden="true"></span>
+          <span class="proof-chip" data-i18n="proof.3">Launch in 5–7 days</span>
+          <span class="proof-sep" aria-hidden="true"></span>
+          <span class="proof-chip" data-i18n="proof.1">150+ projects</span>
+          <span class="proof-sep" aria-hidden="true"></span>
+          <span class="proof-chip" data-i18n="proof.2">5,000+ leads</span>
+          <span class="proof-sep" aria-hidden="true"></span>
+          <span class="proof-chip" data-i18n="proof.3">Launch in 5–7 days</span>
+          <span class="proof-sep" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="wrap section-head reveal">
+        <p class="eyebrow" data-i18n="portfolio.eyebrow">Work</p>
+        <h2 data-i18n="portfolio.title">Our projects</h2>
+        <p class="section-support" data-i18n="portfolio.support">Live websites for clients across different industries. Each one is built to turn visitors into leads.</p>
+      </div>
+
+      <article class="case reveal">
+        <div class="case-meta wrap">
+          <span class="case-index">01</span>
+          <div>
+            <h3 data-i18n="portfolio.diceTitle">dice</h3>
+            <p data-i18n="portfolio.diceMeta">Product website</p>
+          </div>
+        </div>
+        <div class="case-stage wrap">
+          <button type="button" class="case-shot case-shot-main" data-lightbox>
+            <img src="assets/portfolio/dice/photo_2026-08-02_09-32-36.jpg" alt="dice — homepage screenshot" loading="lazy">
+          </button>
+          <div class="case-strip">
+            <button type="button" class="case-shot" data-lightbox>
+              <img src="assets/portfolio/dice/photo_2026-08-02_09-32-37.jpg" alt="dice — product screen" loading="lazy">
+            </button>
+            <button type="button" class="case-shot" data-lightbox>
+              <img src="assets/portfolio/dice/photo_2026-08-02_09-32-37 (2).jpg" alt="dice — detail screen" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-meta wrap">
+          <span class="case-index">02</span>
+          <div>
+            <h3 data-i18n="portfolio.mimiclyTitle">mimicly</h3>
+            <p data-i18n="portfolio.mimiclyMeta">Brand & landing</p>
+          </div>
+        </div>
+        <div class="case-stage wrap">
+          <button type="button" class="case-shot case-shot-main" data-lightbox>
+            <img src="assets/portfolio/mimicly/photo_2026-08-02_09-32-34.jpg" alt="mimicly — landing screenshot" loading="lazy">
+          </button>
+          <div class="case-strip">
+            <button type="button" class="case-shot" data-lightbox>
+              <img src="assets/portfolio/mimicly/photo_2026-08-02_09-32-35.jpg" alt="mimicly — brand screen" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-meta wrap">
+          <span class="case-index">03</span>
+          <div>
+            <h3 data-i18n="portfolio.mmTitle">mm</h3>
+            <p data-i18n="portfolio.mmMeta">Service site</p>
+          </div>
+        </div>
+        <div class="case-stage wrap">
+          <button type="button" class="case-shot case-shot-main" data-lightbox>
+            <img src="assets/portfolio/mm/photo_2026-08-02_09-32-38.jpg" alt="mm — service site screenshot" loading="lazy">
+          </button>
+          <div class="case-strip">
+            <button type="button" class="case-shot" data-lightbox>
+              <img src="assets/portfolio/mm/photo_2026-08-02_09-32-39.jpg" alt="mm — content screen" loading="lazy">
+            </button>
+            <button type="button" class="case-shot" data-lightbox>
+              <img src="assets/portfolio/mm/photo_2026-08-02_09-32-40.jpg" alt="mm — detail screen" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section services-section reveal" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 data-i18n="services.title">What we ship</h2>
+          <p class="section-support" data-i18n="services.support">Clear scope, fast delivery, conversion-first craft.</p>
+        </div>
+
+        <div class="service-list">
+          <a class="service-row" href="#lead">
+            <span class="service-num">01</span>
+            <span class="service-copy">
+              <strong data-i18n="services.1Title">Websites & landings</strong>
+              <span data-i18n="services.1Body">Offer → proof → CTA structure built to convert visitors into leads.</span>
+            </span>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="service-row" href="#lead">
+            <span class="service-num">02</span>
+            <span class="service-copy">
+              <strong data-i18n="services.2Title">UI / UX design</strong>
+              <span data-i18n="services.2Body">Clean product hierarchy, calm spacing, and interfaces people understand.</span>
+            </span>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="service-row" href="#lead">
+            <span class="service-num">03</span>
+            <span class="service-copy">
+              <strong data-i18n="services.3Title">CRM & automation</strong>
+              <span data-i18n="services.3Body">Lead forms wired into your CRM so requests don’t get lost.</span>
+            </span>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="service-row" href="#lead">
+            <span class="service-num">04</span>
+            <span class="service-copy">
+              <strong data-i18n="services.4Title">Conversion polish</strong>
+              <span data-i18n="services.4Body">Copy, layout, and CTA passes that raise lead quality without clutter.</span>
+            </span>
+            <span class="service-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section reveal" id="about">
+      <div class="wrap about-grid">
+        <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+        <div>
+          <h2 data-i18n="about.title">Small agency. Sharp delivery.</h2>
+          <p class="about-block" data-i18n="about.body">We design and launch converting websites for service businesses. Short cycles, clear communication, and work you can show.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+      <div class="wrap section-head reveal">
+        <p class="eyebrow" data-i18n="reviews.eyebrow">Reviews</p>
+        <h2 data-i18n="reviews.title">What clients say</h2>
+      </div>
+      <div class="reviews-rail">
+        <article class="review-slide reveal">
+          <blockquote data-i18n="reviews.1Quote">“They shipped a clean landing in a week. Leads started coming the same month.”</blockquote>
+          <cite data-i18n="reviews.1Attr">— Placeholder · Service business</cite>
+        </article>
+        <article class="review-slide reveal">
+          <blockquote data-i18n="reviews.2Quote">“Clear process, no fluff. The site finally matches how we sell.”</blockquote>
+          <cite data-i18n="reviews.2Attr">— Placeholder · Studio founder</cite>
+        </article>
+        <article class="review-slide reveal">
+          <blockquote data-i18n="reviews.3Quote">“Fast feedback loops and a form that actually brings requests.”</blockquote>
+          <cite data-i18n="reviews.3Attr">— Placeholder · Local brand</cite>
+        </article>
+      </div>
+    </section>
+
+    <section class="section lead-section reveal" id="lead">
+      <div class="wrap lead-layout">
+        <div class="lead-intro">
+          <p class="eyebrow" data-i18n="form.eyebrow">Contact</p>
+          <h2 data-i18n="form.title">Leave a request</h2>
+          <p class="section-support" data-i18n="form.support">Tell us what you need — we’ll reply with next steps.</p>
+        </div>
+
+        <form class="form-shell" id="lead-form" action="#lead" method="post" novalidate onsubmit="return false;">
+          <div class="field" data-field="need">
+            <div class="field-label" id="need-label" data-i18n="form.needLabel">What do you need?</div>
+            <div class="chip-group" role="radiogroup" aria-labelledby="need-label" aria-describedby="need-error">
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="0" data-value="website" data-i18n="form.need.website">Website/Landing</button>
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="uiux" data-i18n="form.need.uiux">UI/UX design</button>
+            </div>
+            <div class="field-error" id="need-error" data-error-for="need" data-i18n="form.error.need">Select what you need</div>
+          </div>
+
+          <div class="field" data-field="budget">
+            <div class="field-label" id="budget-label" data-i18n="form.budgetLabel">Budget</div>
+            <div class="chip-group" role="radiogroup" aria-labelledby="budget-label" aria-describedby="budget-error">
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="0" data-value="under10" data-i18n="form.budget.under10">Under 10k RUB</button>
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="10to30" data-i18n="form.budget.10to30">10–30k</button>
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="30to70" data-i18n="form.budget.30to70">30–70k</button>
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="over70" data-i18n="form.budget.over70">Over 70k</button>
+              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="discuss" data-i18n="form.budget.discuss">Discuss</button>
+            </div>
+            <div class="field-error" id="budget-error" data-error-for="budget" data-i18n="form.error.budget">Select a budget</div>
+          </div>
+
+          <div class="field" data-field="name">
+            <label for="name" data-i18n="form.nameLabel">Name</label>
+            <input class="input" id="name" name="name" autocomplete="name" required aria-describedby="name-error" data-i18n-placeholder="form.namePlaceholder" placeholder="Your name">
+            <div class="field-error" id="name-error" data-error-for="name" data-i18n="form.error.name">Enter your name</div>
+          </div>
+
+          <div class="field" data-field="contact">
+            <label for="contact" data-i18n="form.contactLabel">Telegram or phone</label>
+            <input class="input" id="contact" name="contact" autocomplete="tel" required aria-describedby="contact-error" data-i18n-placeholder="form.contactPlaceholder" placeholder="@username or +7…">
+            <div class="field-error" id="contact-error" data-error-for="contact" data-i18n="form.error.contact">Enter Telegram or phone</div>
+          </div>
+
+          <div class="field" data-field="about">
+            <label for="about" data-i18n="form.aboutLabel">About the project</label>
+            <textarea class="textarea" id="about" name="about" required aria-describedby="about-error" data-i18n-placeholder="form.aboutPlaceholder" placeholder="Short description of what you need"></textarea>
+            <div class="field-error" id="about-error" data-error-for="about" data-i18n="form.error.about">Add a short project note</div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary btn-wide" type="submit" data-i18n="form.submit">Send request</button>
+          </div>
+
+          <div class="form-success" id="form-success" role="status" aria-live="polite">
+            <strong data-i18n="form.successTitle">Request received</strong>
+            <p data-i18n="form.successBody">Thanks — we’ll get back to you shortly. (UI-only confirmation for now.)</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-mark" aria-hidden="true">
+        <span>the</span>
+        <span>one<span class="dot"></span></span>
+        <span>site</span>
+      </div>
+      <div>
+        <p class="footer-note" data-i18n="footer.note">Websites · Automation · Conversion</p>
+      </div>
+      <a class="btn btn-primary btn-mini" href="#lead" data-i18n="footer.cta">Leave a request</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">×</button>
+    <img class="lightbox-img" id="lightbox-img" alt="">
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
