@@ -9,7 +9,7 @@
   const SUPPORTED_LANGS = ["en", "ru", "de"];
 
   const state = {
-    lang: SUPPORTED_LANGS.includes(root.lang) ? root.lang : "en",
+    lang: SUPPORTED_LANGS.includes(root.lang) ? root.lang : "ru",
     theme: root.getAttribute("data-theme") === "dark" ? "dark" : "light",
   };
 
@@ -49,7 +49,7 @@
   }
 
   function setLang(lang) {
-    state.lang = SUPPORTED_LANGS.includes(lang) ? lang : "en";
+    state.lang = SUPPORTED_LANGS.includes(lang) ? lang : "ru";
     root.lang = state.lang;
     document.querySelectorAll("[data-lang]").forEach((btn) => {
       btn.setAttribute("aria-pressed", String(btn.getAttribute("data-lang") === state.lang));

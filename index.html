@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="the.onesite AGENCY — turnkey websites that help businesses get more leads, grow sales, and automate client work.">
-  <title>the.onesite AGENCY — websites that convert</title>
+  <meta name="description" content="the.onesite AGENCY — сайты под ключ, которые помогают бизнесу получать больше заявок, увеличивать продажи и автоматизировать работу с клиентами.">
+  <title>the.onesite AGENCY — сайты, которые продают</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,11 +17,13 @@
         var theme = localStorage.getItem("onesite-theme");
         var lang = localStorage.getItem("onesite-lang");
         if (theme === "dark" || theme === "light") document.documentElement.setAttribute("data-theme", theme);
-        if (lang === "ru" || lang === "en" || lang === "de") {
-          document.documentElement.lang = lang;
-          if (lang !== "en") document.documentElement.classList.add("i18n-pending");
-        }
-      } catch (e) {}
+        if (lang !== "ru" && lang !== "en" && lang !== "de") lang = "ru";
+        document.documentElement.lang = lang;
+        document.documentElement.classList.add("i18n-pending");
+      } catch (e) {
+        document.documentElement.lang = "ru";
+        document.documentElement.classList.add("i18n-pending");
+      }
     })();
   </script>
 </head>
@@ -48,8 +50,8 @@
 
       <div class="header-controls">
         <div class="seg" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.en">EN</button>
-          <button type="button" data-lang="ru" aria-pressed="false" data-i18n="lang.ru">RU</button>
+          <button type="button" data-lang="en" aria-pressed="false" data-i18n="lang.en">EN</button>
+          <button type="button" data-lang="ru" aria-pressed="true" data-i18n="lang.ru">RU</button>
           <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.de">DE</button>
         </div>
         <div class="seg" role="group" aria-label="Theme">
