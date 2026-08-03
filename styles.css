@@ -209,6 +209,7 @@ textarea {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .mark {
@@ -228,6 +229,10 @@ textarea {
 .mark-site {
   font-size: 18px;
   letter-spacing: -0.05em;
+}
+
+.mark-one {
+  white-space: nowrap;
 }
 
 .header-controls {
@@ -510,6 +515,10 @@ textarea {
 .brand-site {
   font-size: clamp(64px, 14vw, 140px);
   letter-spacing: -0.07em;
+}
+
+.brand-one {
+  white-space: nowrap;
 }
 
 .brand-agency {
@@ -1129,6 +1138,10 @@ html[data-theme="dark"] .field-error {
 .footer-mark span:first-child {
   font-size: 11px;
   letter-spacing: 0;
+}
+
+.footer-mark span:nth-child(2) {
+  white-space: nowrap;
 }
 
 .footer-note {
