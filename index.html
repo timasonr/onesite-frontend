@@ -17,9 +17,9 @@
         var theme = localStorage.getItem("onesite-theme");
         var lang = localStorage.getItem("onesite-lang");
         if (theme === "dark" || theme === "light") document.documentElement.setAttribute("data-theme", theme);
-        if (lang === "ru" || lang === "en") {
+        if (lang === "ru" || lang === "en" || lang === "de") {
           document.documentElement.lang = lang;
-          if (lang === "ru") document.documentElement.classList.add("i18n-pending");
+          if (lang !== "en") document.documentElement.classList.add("i18n-pending");
         }
       } catch (e) {}
     })();
@@ -43,13 +43,14 @@
       <nav class="nav-desktop" aria-label="Primary">
         <a href="#work" data-i18n="nav.work">Work</a>
         <a href="#services" data-i18n="nav.services">Process</a>
-        <a class="btn btn-primary btn-mini" href="#lead" data-i18n="nav.cta">Leave a request</a>
+        <a class="btn btn-primary btn-mini" href="#lead" data-i18n="nav.cta">Get a consult</a>
       </nav>
 
       <div class="header-controls">
         <div class="seg" role="group" aria-label="Language">
           <button type="button" data-lang="en" aria-pressed="true" data-i18n="lang.en">EN</button>
           <button type="button" data-lang="ru" aria-pressed="false" data-i18n="lang.ru">RU</button>
+          <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.de">DE</button>
         </div>
         <div class="seg" role="group" aria-label="Theme">
           <button type="button" data-theme-set="light" aria-pressed="true" data-i18n="theme.light">Light</button>
@@ -64,7 +65,7 @@
     <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#services" data-i18n="nav.services">Process</a>
-      <a class="btn btn-primary" href="#lead" data-i18n="nav.cta">Leave a request</a>
+      <a class="btn btn-primary" href="#lead" data-i18n="nav.cta">Get a consult</a>
     </nav>
   </header>
 
@@ -90,7 +91,7 @@
         <h1 class="hero-title hero-in" data-i18n="hero.title">Websites that turn visitors into your clients</h1>
         <p class="hero-support hero-in" data-i18n="hero.support">We build turnkey websites that help businesses get more leads, grow sales, and automate client work.</p>
         <div class="cta-row hero-in">
-          <a class="btn btn-primary" href="#lead" data-i18n="hero.cta">Leave a request</a>
+          <a class="btn btn-primary" href="#lead" data-i18n="hero.cta">Get a consult</a>
           <a class="btn btn-ghost" href="#work" data-i18n="hero.secondary">See the work</a>
         </div>
       </div>
@@ -196,58 +197,12 @@
         <div class="lead-intro">
           <p class="eyebrow" data-i18n="form.eyebrow">Contact</p>
           <h2 data-i18n="form.title">Ready to get more leads?</h2>
-          <p class="section-support" data-i18n="form.support">In 10–15 minutes we’ll review your project, show how a site can bring more leads, and propose a fit for your business. No long calls. No heavy forms. No wasted time.</p>
+          <p class="section-support" data-i18n="form.support">In 15 minutes we’ll review your project and propose a solution for your business that helps grow profit, speed up work, and automate key processes.</p>
         </div>
 
-        <form class="form-shell" id="lead-form" action="#lead" method="post" novalidate onsubmit="return false;">
-          <div class="field" data-field="need">
-            <div class="field-label" id="need-label" data-i18n="form.needLabel">What do you need?</div>
-            <div class="chip-group" role="radiogroup" aria-labelledby="need-label" aria-describedby="need-error">
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="0" data-value="website" data-i18n="form.need.website">Website/Landing</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="uiux" data-i18n="form.need.uiux">UI/UX design</button>
-            </div>
-            <div class="field-error" id="need-error" data-error-for="need" data-i18n="form.error.need">Select what you need</div>
-          </div>
-
-          <div class="field" data-field="budget">
-            <div class="field-label" id="budget-label" data-i18n="form.budgetLabel">Budget</div>
-            <div class="chip-group" role="radiogroup" aria-labelledby="budget-label" aria-describedby="budget-error">
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="0" data-value="under10" data-i18n="form.budget.under10">Under 10k RUB</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="10to30" data-i18n="form.budget.10to30">10–30k</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="30to70" data-i18n="form.budget.30to70">30–70k</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="over70" data-i18n="form.budget.over70">Over 70k</button>
-              <button type="button" class="chip" role="radio" aria-checked="false" tabindex="-1" data-value="discuss" data-i18n="form.budget.discuss">Discuss</button>
-            </div>
-            <div class="field-error" id="budget-error" data-error-for="budget" data-i18n="form.error.budget">Select a budget</div>
-          </div>
-
-          <div class="field" data-field="name">
-            <label for="name" data-i18n="form.nameLabel">Name</label>
-            <input class="input" id="name" name="name" autocomplete="name" required aria-describedby="name-error" data-i18n-placeholder="form.namePlaceholder" placeholder="Your name">
-            <div class="field-error" id="name-error" data-error-for="name" data-i18n="form.error.name">Enter your name</div>
-          </div>
-
-          <div class="field" data-field="contact">
-            <label for="contact" data-i18n="form.contactLabel">Telegram or phone</label>
-            <input class="input" id="contact" name="contact" autocomplete="tel" required aria-describedby="contact-error" data-i18n-placeholder="form.contactPlaceholder" placeholder="@username or +7…">
-            <div class="field-error" id="contact-error" data-error-for="contact" data-i18n="form.error.contact">Enter Telegram or phone</div>
-          </div>
-
-          <div class="field" data-field="about">
-            <label for="about" data-i18n="form.aboutLabel">About the project</label>
-            <textarea class="textarea" id="about" name="about" required aria-describedby="about-error" data-i18n-placeholder="form.aboutPlaceholder" placeholder="Short description of what you need"></textarea>
-            <div class="field-error" id="about-error" data-error-for="about" data-i18n="form.error.about">Add a short project note</div>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn btn-primary btn-wide" type="submit" data-i18n="form.submit">Send request</button>
-          </div>
-
-          <div class="form-success" id="form-success" role="status" aria-live="polite">
-            <strong data-i18n="form.successTitle">Request received</strong>
-            <p data-i18n="form.successBody">Thanks — we’ll get back to you shortly. (UI-only confirmation for now.)</p>
-          </div>
-        </form>
+        <div class="lead-action">
+          <a class="btn btn-primary btn-wide" href="https://wa.me/77027400467" target="_blank" rel="noopener" data-i18n="form.whatsapp">Get a consult on WhatsApp</a>
+        </div>
       </div>
     </section>
   </main>
@@ -262,7 +217,7 @@
       <div>
         <p class="footer-note" data-i18n="footer.note">Websites that turn visitors into clients</p>
       </div>
-      <a class="btn btn-primary btn-mini" href="#lead" data-i18n="footer.cta">Leave a request</a>
+      <a class="btn btn-primary btn-mini" href="#lead" data-i18n="footer.cta">Get a consult</a>
     </div>
   </footer>
 

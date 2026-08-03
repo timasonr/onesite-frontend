@@ -959,6 +959,25 @@ a.service-row {
   gap: 36px;
 }
 
+.lead-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: color-mix(in srgb, var(--surface-soft) 88%, transparent);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius-xl) + 4px);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  min-height: 140px;
+}
+
+@media (min-width: 768px) {
+  .lead-action {
+    padding: 34px 32px;
+  }
+}
+
 @media (min-width: 960px) {
   .lead-layout {
     grid-template-columns: 0.85fr 1.15fr;
