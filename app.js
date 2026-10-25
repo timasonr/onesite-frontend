@@ -2,9 +2,10 @@
   const dict = window.ONESITE_I18N || { en: {}, ru: {} };
   const root = document.documentElement;
   const menuToggle = document.querySelector(".menu-toggle");
-  const mobileNav = document.getElementById("mobile-nav");
+  const mobileNav = document.getElementById("mobile-drawer");
+  const backdrop = document.querySelector(".drawer-backdrop");
   const menuLabel = document.querySelector("[data-menu-label]");
-  const desktopQuery = window.matchMedia("(min-width: 900px)");
+  const desktopQuery = window.matchMedia("(min-width: 960px)");
 
   const SUPPORTED_LANGS = ["en", "ru", "de"];
 
@@ -71,18 +72,25 @@
     } catch (e) {}
   }
 
-  function closeMobileNav() {
+  function setDrawer(open) {
     if (!mobileNav || !menuToggle) return;
-    mobileNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+    mobileNav.classList.toggle("open", open);
+    mobileNav.toggleAttribute("hidden", !open);
+    mobileNav.setAttribute("aria-hidden", open ? "false" : "true");
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    root.classList.toggle("drawer-open", open);
+    if (backdrop) backdrop.hidden = !open;
     updateMenuLabel();
   }
 
+  function closeMobileNav() {
+    setDrawer(false);
+  }
+
   function openMobileNav() {
-    if (!mobileNav || !menuToggle) return;
-    mobileNav.classList.add("open");
-    menuToggle.setAttribute("aria-expanded", "true");
-    updateMenuLabel();
+    setDrawer(true);
+    const closeBtn = mobileNav && mobileNav.querySelector(".drawer-close");
+    if (closeBtn) closeBtn.focus();
   }
 
   document.querySelectorAll("[data-lang]").forEach((btn) => {
@@ -103,6 +111,10 @@
       if (event.key === "Escape") closeMobileNav();
     });
 
+    document.querySelectorAll("[data-drawer-close]").forEach((el) => {
+      el.addEventListener("click", () => closeMobileNav());
+    });
+
     document.addEventListener("click", (event) => {
       if (!mobileNav.classList.contains("open")) return;
       const inside = mobileNav.contains(event.target) || menuToggle.contains(event.target);
@@ -119,6 +131,24 @@
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", () => closeMobileNav());
   });
+
+  const bottomLinks = Array.from(document.querySelectorAll(".bottom-nav a"));
+  function markBottomNav() {
+    if (!bottomLinks.length) return;
+    const marker = window.scrollY + window.innerHeight * 0.45;
+    let active = null;
+    bottomLinks.forEach((link) => {
+      const id = (link.getAttribute("href") || "").replace("#", "");
+      const section = document.getElementById(id);
+      if (section && section.offsetTop <= marker) active = link;
+    });
+    bottomLinks.forEach((link) => {
+      if (link === active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  }
+  markBottomNav();
+  window.addEventListener("scroll", markBottomNav, { passive: true });
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduceMotion && "IntersectionObserver" in window) {

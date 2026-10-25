@@ -2,14 +2,14 @@
 <html lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="the.onesite AGENCY — сайты под ключ, которые помогают бизнесу получать больше заявок, увеличивать продажи и автоматизировать работу с клиентами.">
   <title>the.onesite AGENCY — сайты, которые продают</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.2.5/index.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261001-2">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <script>
     (function () {
@@ -58,27 +58,61 @@
           <button type="button" data-theme-set="light" aria-pressed="true" data-i18n="theme.light">Light</button>
           <button type="button" data-theme-set="dark" aria-pressed="false" data-i18n="theme.dark">Dark</button>
         </div>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-i18n-aria="nav.menu">
-          <span data-menu-label data-i18n="nav.menu">Menu</span>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="visually-hidden" data-menu-label data-i18n="nav.menu">Menu</span>
         </button>
       </div>
     </div>
+  </header>
 
-    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+  <button class="drawer-backdrop" type="button" data-drawer-close hidden>
+    <span class="visually-hidden" data-i18n="nav.close">Close</span>
+  </button>
+  <aside id="mobile-drawer" class="nav-drawer" hidden aria-hidden="true">
+    <div class="drawer-top">
+      <p class="drawer-kicker" data-i18n="nav.menu">Menu</p>
+      <button class="drawer-close" type="button" data-drawer-close>
+        <span aria-hidden="true">×</span>
+        <span class="visually-hidden" data-i18n="nav.close">Close</span>
+      </button>
+    </div>
+    <nav class="drawer-nav" aria-label="Mobile">
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#services" data-i18n="nav.services">Process</a>
-      <a class="btn btn-primary" href="#lead" data-i18n="nav.cta">Get a consult</a>
     </nav>
-  </header>
+    <div class="drawer-prefs">
+      <p class="drawer-label" data-i18n="nav.language">Language</p>
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" aria-pressed="true" data-i18n="lang.ru">RU</button>
+        <button type="button" data-lang="en" aria-pressed="false" data-i18n="lang.en">EN</button>
+        <button type="button" data-lang="de" aria-pressed="false" data-i18n="lang.de">DE</button>
+      </div>
+      <p class="drawer-label" data-i18n="nav.themeLabel">Theme</p>
+      <div class="seg" role="group" aria-label="Theme">
+        <button type="button" data-theme-set="light" aria-pressed="true" data-i18n="theme.light">Light</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" data-i18n="theme.dark">Dark</button>
+      </div>
+    </div>
+    <a class="btn btn-primary btn-wide" href="#lead" data-i18n="nav.cta">Get a consult</a>
+  </aside>
 
   <main id="main" tabindex="-1">
     <section class="hero" id="top">
       <div class="hero-stage" data-hero-stage>
         <div class="hero-collage" aria-hidden="true">
-          <figure class="float float-a"><img src="assets/portfolio/schastie/case-schastie-site.png" alt=""></figure>
-          <figure class="float float-b"><img src="assets/portfolio/kisko/case-kisko.png" alt=""></figure>
-          <figure class="float float-c"><img src="assets/portfolio/ustroidom/case-ustroidom.png" alt=""></figure>
-          <figure class="float float-d"><img src="assets/portfolio/fitfight/case-fitfight.png" alt=""></figure>
+          <figure class="float float-a">
+            <img src="assets/portfolio/schastie/case-schastie-site.png" alt="" width="1280" height="800" decoding="async">
+          </figure>
+          <figure class="float float-b">
+            <img src="assets/portfolio/kisko/case-kisko.png" alt="" width="1280" height="800" decoding="async">
+          </figure>
+          <figure class="float float-c">
+            <img src="assets/portfolio/ustroidom/case-ustroidom.png" alt="" width="1280" height="800" decoding="async">
+          </figure>
+          <figure class="float float-d">
+            <img src="assets/portfolio/fitfight/case-fitfight.png" alt="" width="1280" height="853" decoding="async">
+          </figure>
         </div>
         <div class="hero-veil"></div>
       </div>
@@ -137,7 +171,7 @@
         </div>
         <div class="case-stage wrap">
           <button type="button" class="case-shot case-shot-main" data-lightbox>
-            <img src="assets/portfolio/schastie/case-schastie-site.png" alt="Schastie — restaurant website screenshot" loading="lazy" data-i18n-alt="portfolio.schastieAlt">
+            <img src="assets/portfolio/schastie/case-schastie-site.png" alt="Schastie — restaurant website screenshot" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="portfolio.schastieAlt">
           </button>
         </div>
       </article>
@@ -154,7 +188,7 @@
         </div>
         <div class="case-stage wrap">
           <button type="button" class="case-shot case-shot-main" data-lightbox>
-            <img src="assets/portfolio/kisko/case-kisko.png" alt="Fahrschule Kisko — website screenshot" loading="lazy" data-i18n-alt="portfolio.kiskoAlt">
+            <img src="assets/portfolio/kisko/case-kisko.png" alt="Fahrschule Kisko — website screenshot" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="portfolio.kiskoAlt">
           </button>
         </div>
       </article>
@@ -171,7 +205,7 @@
         </div>
         <div class="case-stage wrap">
           <button type="button" class="case-shot case-shot-main" data-lightbox>
-            <img src="assets/portfolio/ustroidom/case-ustroidom.png" alt="Ustroi Dom — website screenshot" loading="lazy" data-i18n-alt="portfolio.ustroidomAlt">
+            <img src="assets/portfolio/ustroidom/case-ustroidom.png" alt="Ustroi Dom — website screenshot" width="1280" height="800" loading="lazy" decoding="async" data-i18n-alt="portfolio.ustroidomAlt">
           </button>
         </div>
       </article>
@@ -188,7 +222,7 @@
         </div>
         <div class="case-stage wrap">
           <button type="button" class="case-shot case-shot-main" data-lightbox>
-            <img src="assets/portfolio/fitfight/case-fitfight.png" alt="Fit & Fight — website screenshot" loading="lazy" data-i18n-alt="portfolio.fitfightAlt">
+            <img src="assets/portfolio/fitfight/case-fitfight.png" alt="Fit & Fight — website screenshot" width="1280" height="853" loading="lazy" decoding="async" data-i18n-alt="portfolio.fitfightAlt">
           </button>
         </div>
       </article>
@@ -261,7 +295,13 @@
     <img class="lightbox-img" id="lightbox-img" alt="">
   </div>
 
-  <script src="i18n.js"></script>
-  <script src="app.js"></script>
+  <nav class="bottom-nav" aria-label="Mobile">
+    <a href="#work" data-i18n="nav.work">Work</a>
+    <a href="#services" data-i18n="nav.servicesShort">Process</a>
+    <a class="bottom-nav-cta" href="#lead" data-i18n="nav.ctaShort">Consult</a>
+  </nav>
+
+  <script src="i18n.js?v=20261001-2"></script>
+  <script src="app.js?v=20261001-2"></script>
 </body>
 </html>
